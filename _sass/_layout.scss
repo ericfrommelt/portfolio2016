@@ -1,0 +1,158 @@
+.site-header {
+	width: 90%;
+	margin: 2em auto 0 auto;
+
+	@media only screen and (min-width: 2000px) {
+		width: 70%;
+	}
+}
+
+.site-header h1 {
+  font-size: 2em;
+  font-family: $display-font;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #FFF;
+  margin-bottom: 4em;
+}
+
+#work-index, #work-detail {
+  width: 90%;
+  margin: 0 auto 0 auto;
+	position:relative;
+	
+	@media only screen and (min-width: 2000px) {
+		width: 70%;
+	}
+}
+
+.work-thumbnail {
+	display: block;
+	font-family: $text-font;
+	font-weight: 400;
+}
+
+.work-thumbnail figcaption {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: rgba(38, 35, 36, .75);
+	opacity: 0;
+	overflow: hidden;
+	transition: opacity 0.2s ease-in-out;
+	padding: 1em;
+}
+
+.work-thumbnail figcaption:hover {
+	opacity: 1;
+}
+
+.work-thumbnail figcaption h2 {
+	font-size: 1.2em;
+	color: #fff;
+	margin-bottom: .8em;
+	letter-spacing: .3em;
+	text-transform: uppercase;
+}
+
+.work-thumbnail figcaption h2:before {
+
+}
+
+.work-thumbnail figcaption p {
+	font-size: 1em;
+	color: #fff;
+	letter-spacing: .3em;
+}
+
+
+.work-thumbnail figcaption .work-details {
+
+	// Center horizontally and vertically
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 1em;
+	border: 1px solid #fff;
+}
+
+
+
+.work-background {
+
+}
+
+.work-content {
+
+}
+
+.work-info {
+	margin-top: 9em;
+}
+
+.work-title {
+	font-size: 2.5em;
+  font-family: $display-font;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #FFF;
+  margin-bottom: 1em;
+}
+
+.work-description {
+	font-family: $text-font;
+	font-style: normal;
+	font-weight: 400;
+	color: #fff;
+	font-size: 1.2em;
+	letter-spacing: .1em;
+	margin-bottom: 1em;
+	line-height: 1.5em;
+}
+
+.work-image {
+
+}
+
+.client-name {
+	font-family: $text-font;
+	font-style: normal;
+	font-weight: 400;
+	color: #fff;
+	font-size: 1.4em;
+	letter-spacing: .1em;
+	margin-bottom: 1em;
+}
+
+.site-nav {
+	display: block;
+	font-family: $text-font;
+	font-style: normal;
+	font-weight: 400;
+	color: #fff;
+	font-size: 1.4em;
+}
+
+.site-nav ul {
+	margin-left: 0;
+}
+
+.site-nav li {
+	float: left;
+}
+
+.site-nav a {
+	padding: .4em 1em 0 0;
+	display: block;
+}
