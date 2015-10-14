@@ -5,6 +5,17 @@ client: Wired
 description: This was intended to be a piece of a larger infographic package dealing with popular online dating sites. This piece was highlighting the most popular profiles on Ok Cupid from different regions of the U.S. Unfortunately it got killed.
 ---
 
+<div class="col8">
+  <nav class="project-nav">
+    <ul>
+      <li><a class="project-grid" href="{{ site.url }}{{ site.baseurl }}"><img src="{{ site.url }}{{ site.baseurl }}img/work_grid.svg" alt="All projects" /></a></li>
+      <li><a class="previous-project" href="#"><img src="{{ site.url }}{{ site.baseurl }}img/prev_arrow.svg" alt="" /></a></li>
+      <li><a class="next-project" href="#"><img src="{{ site.url }}{{ site.baseurl }}img/next_arrow.svg" alt="" /></a></li>
+    </ul>
+  <div style="clear:both"></div>
+  </nav>
+</div>
+
 <div class="col8 offset-by-three work-info">
   <h1 class="work-title">{{ page.title }}</h1>
   <h2 class="client-name">{{ page.client }}</h2>
@@ -17,3 +28,7 @@ description: This was intended to be a piece of a larger infographic package dea
     <img srcset="{{ site.url }}{{ site.baseurl }}img/wired-okcupid-1x.png 1x, {{ site.url }}{{ site.baseurl }}img/wired-okcupid-2x.png 2x">
   </figure>
 </div>
+
+<nav>
+  <a class="previous-project" href="#">Previous</a> <a class="next-project" href="#">Next</a>
+</nav>
