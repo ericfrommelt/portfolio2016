@@ -26,8 +26,23 @@ var pages = {
           },
 
           {
+            "title": "Squared",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/squared/"
+          },
+
+          {
             "title": "Oculus Rift",
             "url": "http://sites:8888/ericfrommelt2015/_site/work/oculus-rift/"
+          },
+
+          {
+            "title": "Resistance",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/resistance/"
+          },
+
+          {
+            "title": "Fairfax",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/fairfax/"
           },
 
           {
@@ -103,6 +118,16 @@ var pages = {
           {
             "title": "Auto Intel",
             "url": "http://sites:8888/ericfrommelt2015/_site/work/auto-intel/"
+          },
+
+          {
+            "title": "Wiretap",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/wiretap/"
+          },
+
+          {
+            "title": "Network Object 2",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object2/"
           }
         ]
       }

@@ -3,12 +3,16 @@ layout: work
 title: Lakers Numbers
 client: ESPN the Magazine
 description: While having one of the best teams in the league, Lakers coach Mike D'Antoni is struggling this year with his lineups.
+artdirector: Alice Alves
 ---
 
-<div class="col8 offset-by-three work-info">
-  <h1 class="work-title">{{ page.title }}</h1>
-  <h2 class="client-name">{{ page.client }}</h2>
-  <p class="work-description">{{ page.description }}</p>
+<div class="col8 work-info">
+  <h1 class="work-title col2 alpha">{{ page.title }}</h1>
+  <p class="work-description col4">{{ page.description }}</p>
+  <div class="col2 omega">
+    <h2 class="client-name"><span class="bold">Client:</span> {{ page.client }}</h2>
+    <h2 class="client-name"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>
+  </div>
 </div>
 
 

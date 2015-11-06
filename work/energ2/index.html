@@ -6,13 +6,14 @@ description: EnerG2 is a Seattle startup working on a new carbon synthesis proce
 art-director: Sue Nguyen
 ---
 
-<div class="col8 offset-by-three work-info">
-  <h1 class="work-title">{{ page.title }}</h1>
-  <h2 class="client-name">{{ page.client }}</h2>
-  <h2 class="art-director">Art Director: {{ page.art-director}}</h2>
-  <p class="work-description">{{ page.description }}</p>
+<div class="col8 work-info">
+  <h1 class="work-title col2 alpha">{{ page.title }}</h1>
+  <p class="work-description col4">{{ page.description }}</p>
+  <div class="col2 omega">
+    <h2 class="client-name"><span class="bold">Client:</span> {{ page.client }}</h2>
+    <h2 class="client-name"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>
+  </div>
 </div>
-
 
 <div class="col8">
   <figure class="work-image">

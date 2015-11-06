@@ -3,16 +3,20 @@ layout: work
 title: Visions for Space
 client: USC Viterbi School of Engineering
 description: I had the pleasure of working on illustrations based on four projects by USC astronautic students about engineering solutions to problems we may encounter in our future exploration of space.
+artdirector: Greer Burton
 ---
 
-<div class="col8 offset-by-three work-info">
-  <h1 class="work-title">{{ page.title }}</h1>
-  <h2 class="client-name">{{ page.client }}</h2>
-  <p class="work-description">{{ page.description }}</p>
+<div class="col8 work-info">
+  <h1 class="work-title col2 alpha">{{ page.title }}</h1>
+  <p class="work-description col4">{{ page.description }}</p>
+  <div class="col2 omega">
+    <h2 class="client-name"><span class="bold">Client:</span> {{ page.client }}</h2>
+    <h2 class="client-name"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>
+  </div>
 </div>
 
 
-<div class="col8">
+<div class="col7">
   <figure class="work-image">
     <img srcset="{{ site.url }}{{ site.baseurl }}img/usc-visions-for-space-01-1x.png 1x, {{ site.url }}{{ site.baseurl }}img/usc-visions-for-space-01-2x.png 2x">
   </figure>
