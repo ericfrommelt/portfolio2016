@@ -128,6 +128,96 @@ var pages = {
           {
             "title": "Network Object 2",
             "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object2/"
+          },
+
+          {
+            "title": "Network Object 1",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object1/"
+          },
+
+          {
+            "title": "Observatory",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/observatory/"
+          },
+
+          {
+            "title": "Loop",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/loop/"
+          },
+
+          {
+            "title": "Breakout",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/breakout/"
+          },
+
+          {
+            "title": "Breach",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/breach/"
+          },
+
+          {
+            "title": "Artificial Intelligence",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/artificial-intelligence/"
+          },
+
+          {
+            "title": "NORAD",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/norad/"
+          },
+
+          {
+            "title": "Leak",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/leak/"
+          },
+
+          {
+            "title": "DSP",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/dsp/"
+          },
+
+          {
+            "title": "Integrated Circuit",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/integrated-circuit/"
+          },
+
+          {
+            "title": "Unit",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/unit/"
+          },
+
+          {
+            "title": "GPS",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/gps/"
+          },
+
+          {
+            "title": "Intercept",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/intercept/"
+          },
+
+          {
+            "title": "Encryption Key",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/encryption-key/"
+          },
+
+          {
+            "title": "Google",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/google/"
+          },
+
+          {
+            "title": "Source",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/source/"
+          },
+
+          {
+            "title": "Bunker",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/bunker/"
+          },
+
+          {
+            "title": "Rigged",
+            "url": "http://sites:8888/ericfrommelt2015/_site/work/rigged/"
           }
         ]
       }

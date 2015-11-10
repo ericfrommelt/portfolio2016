@@ -4,7 +4,9 @@
 
 .site-header {
 	width: 90%;
-	margin: 2em auto 0 auto;
+	margin: 2em auto 6em auto;
+	padding-bottom: 2em;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
 
 	@media only screen and (min-width: 2000px) {
 		width: 70%;
@@ -15,11 +17,36 @@
   font-size: 2em;
   font-family: $display-font;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #FFF;
-  margin-bottom: 4em;
+  letter-spacing: .05em;
+  color: $text-color;
+  // margin-bottom: 4em;
+}
+
+.site-nav {
+	display: block;
+	font-family: $text-font;
+	font-style: normal;
+	font-weight: 400;
+	color: $text-color;
+	font-size: 1.4em;
+}
+
+.site-nav ul {
+	margin-left: 0;
+	float:right;
+}
+
+.site-nav li {
+	float: left;
+	display: inline-block;
+	text-align: right;
+}
+
+.site-nav a {
+	padding: .4em 1em 0 0;
+	display: block;
 }
 
 #work-index, #work-detail, #about {
@@ -59,7 +86,7 @@
 
 .work-thumbnail figcaption h2 {
 	font-size: 1.2em;
-	color: #fff;
+	color: #FFF;
 	margin-bottom: .8em;
 	letter-spacing: .3em;
 	text-transform: uppercase;
@@ -71,7 +98,7 @@
 
 .work-thumbnail figcaption p {
 	font-size: 1em;
-	color: #fff;
+	color: #FFF;
 	letter-spacing: .3em;
 }
 
@@ -89,7 +116,9 @@
 }
 
 
-
+.work-wrapper {
+	background: #000;
+}
 .work-background {
 
 }
@@ -104,12 +133,12 @@
 }
 
 .work-title {
-	font-size: 1.2em;
+	font-size: 1.6em;
   font-family: $text-font;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: #FFF;
+  color: $text-color;
   margin-bottom: 1em;
 }
 
@@ -117,10 +146,11 @@
 	font-family: $text-font;
 	font-style: normal;
 	font-weight: 400;
-	color: #fff;
+	color: $text-color;
 	font-size: 1.2em;
 	letter-spacing: .1em;
 	margin-bottom: 1em;
+	padding-right: 30%;
 }
 
 .work-image {
@@ -131,33 +161,11 @@
 	font-family: $text-font;
 	font-style: normal;
 	font-weight: 400;
-	color: #fff;
-	font-size: 1.2em;
+	color: $text-color;
+	font-size: 1em;
 	letter-spacing: .1em;
 	opacity: .4;
 	// margin-bottom: 1em;
-}
-
-.site-nav {
-	display: block;
-	font-family: $text-font;
-	font-style: normal;
-	font-weight: 400;
-	color: #fff;
-	font-size: 1.4em;
-}
-
-.site-nav ul {
-	margin-left: 0;
-}
-
-.site-nav li {
-	float: left;
-}
-
-.site-nav a {
-	padding: .4em 1em 0 0;
-	display: block;
 }
 
 .project-nav {
