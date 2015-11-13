@@ -10,6 +10,7 @@
 	@media only screen and (min-width: 2000px) {
 		width: 70%;
 	}
+}
 
 // For spacing between content and the footer
 .work-wrapper, #about, #contact {
@@ -34,7 +35,6 @@
 	margin: 2em auto 6em auto;
 	padding-bottom: 2em;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
-
 	@media only screen and (min-width: 2000px) {
 		width: 70%;
 	}
@@ -47,7 +47,6 @@
   text-transform: uppercase;
   letter-spacing: .05em;
   color: $text-color;
-  // margin-bottom: 4em;
 }
 
 
@@ -93,8 +92,6 @@
 .site-nav a {
 	padding: .4em 1em 0 0;
 	display: block;
-}
-
 }
 
 
