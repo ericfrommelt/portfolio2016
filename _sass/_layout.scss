@@ -1,6 +1,33 @@
-.bold {
-	font-weight: 700;
+/*------------------------------------*\
+    #SITE-WIDE SPACING & ATTRIBUTES
+\*------------------------------------*/
+
+#work-index, #work-detail, #about, #contact, .site-footer {
+  width: 90%;
+  margin: 0 auto 0 auto;
+	position:relative;
+
+	@media only screen and (min-width: 2000px) {
+		width: 70%;
+	}
+
+// For spacing between content and the footer
+.work-wrapper, #about, #contact {
+	margin-bottom: 4em;
 }
+
+.work-description, #about p, #contact p {
+	margin-bottom: 1em;
+	line-height: 1.2em;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SITE-HEADER
+\*------------------------------------*/
 
 .site-header {
 	width: 90%;
@@ -15,7 +42,6 @@
 
 .site-header h1 {
   font-size: 2em;
-  font-family: $display-font;
   font-style: normal;
   font-weight: 900;
   text-transform: uppercase;
@@ -24,11 +50,31 @@
   // margin-bottom: 4em;
 }
 
+
+
+
+
+/*------------------------------------*\
+    #SITE-FOOTER
+\*------------------------------------*/
+
+.site-footer {
+	border-top: 1px solid rgba(0, 0, 0, .1);
+	clear:both;
+	// margin: 4em 0;
+	padding: 4em 0;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SITE-NAVIGATION
+\*------------------------------------*/
+
 .site-nav {
 	display: block;
-	font-family: $text-font;
-	font-style: normal;
-	font-weight: 400;
 	color: $text-color;
 	font-size: 1.4em;
 }
@@ -49,20 +95,18 @@
 	display: block;
 }
 
-#work-index, #work-detail, #about {
-  width: 90%;
-  margin: 0 auto 0 auto;
-	position:relative;
-
-	@media only screen and (min-width: 2000px) {
-		width: 70%;
-	}
 }
+
+
+
+
+
+/*------------------------------------*\
+    #WORK INDEX PAGE
+\*------------------------------------*/
 
 .work-thumbnail {
 	display: block;
-	font-family: $text-font;
-	font-weight: 400;
 	overflow: hidden;
 }
 
@@ -92,16 +136,11 @@
 	text-transform: uppercase;
 }
 
-.work-thumbnail figcaption h2:before {
-
-}
-
 .work-thumbnail figcaption p {
 	font-size: 1em;
 	color: #FFF;
 	letter-spacing: .3em;
 }
-
 
 .work-thumbnail figcaption .work-details {
 
@@ -116,40 +155,27 @@
 }
 
 
-.work-wrapper {
-	background: #000;
-}
-.work-background {
 
-}
 
-.work-content {
 
-}
+/*------------------------------------*\
+    #WORK DETAIL PAGE
+\*------------------------------------*/
 
 .work-info {
-	// margin-top: 9em;
 	line-height: 2em;
 }
 
 .work-title {
 	font-size: 1.6em;
-  font-family: $text-font;
-  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: $text-color;
   margin-bottom: 1em;
 }
 
-.work-description, #about p {
-	font-family: $text-font;
-	font-style: normal;
-	font-weight: 400;
-	color: $text-color;
+
+.work-description {
 	font-size: 1.2em;
-	letter-spacing: .1em;
-	margin-bottom: 1em;
 	padding-right: 30%;
 }
 
@@ -165,8 +191,15 @@
 	font-size: 1em;
 	letter-spacing: .1em;
 	opacity: .4;
-	// margin-bottom: 1em;
 }
+
+
+
+
+
+/*------------------------------------*\
+    #PROJECT NAVIGATION MODULE
+\*------------------------------------*/
 
 .project-nav {
 	position: fixed;
@@ -200,4 +233,56 @@
 
 .project-nav a:hover {
 	opacity: 1;
+}
+
+
+
+
+/*------------------------------------*\
+    #ABOUT PAGE
+\*------------------------------------*/
+
+#about h1, #about h2 {
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
+#about h1 {
+	font-size: 4em;
+	margin-bottom: .5em;
+}
+
+#about h2 {
+	font-size: 2em;
+	margin: 1em 0 .5em 0;
+}
+
+#about p, #contact p {
+	font-size: 2em;
+
+	@media only screen and (min-width: 767px) {
+	margin-right: 20%;
+
+	}
+}
+
+#about ul {
+	font-size: 1.5em;
+	margin: 0;
+}
+
+#about li {
+	line-height: 1.2em;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #CONTACT PAGE
+\*------------------------------------*/
+
+#contact a {
+	text-decoration:underline;
 }

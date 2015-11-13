@@ -3,7 +3,10 @@
     #BASIC-STYLING
 \*------------------------------------*/
 body {
-
+  background: #fff;
+  font-family: $text-font;
+  font-weight: 400;
+  color: $text-color;
 }
 
 
@@ -14,8 +17,8 @@ body {
     #IMAGES
 \*------------------------------------*/
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 
@@ -44,13 +47,13 @@ figure {
     #LISTS
 \*------------------------------------*/
 ul, ol {
-    margin-left: $spacing-unit;
+  margin-left: $spacing-unit;
 }
 
 li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
+  > ul,
+  > ol {
+       margin-bottom: 0;
     }
 }
 
@@ -62,7 +65,8 @@ li {
     #HEADINGS
 \*------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+  font-family: $display-font;
+  font-weight: 700;
 }
 
 
@@ -73,17 +77,17 @@ h1, h2, h3, h4, h5, h6 {
     #LINKS
 \*------------------------------------*/
 a {
-    color: #000;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 
-    &:visited {
-        color: lighten(#000, 15%);
-    }
+  &:visited {
+      color: lighten(#000, 15%);
+  }
 
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  &:hover {
+      color: $text-color;
+      text-decoration: underline;
+  }
 }
 
 
@@ -171,4 +175,15 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+
+
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+
+.bold {
+	font-weight: 700;
 }
