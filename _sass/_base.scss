@@ -3,7 +3,7 @@
     #BASIC-STYLING
 \*------------------------------------*/
 body {
-  background: #fff;
+  background: #000;
   font-family: $text-font;
   font-weight: 400;
   color: $text-color;
@@ -77,12 +77,12 @@ h1, h2, h3, h4, h5, h6 {
     #LINKS
 \*------------------------------------*/
 a {
-  color: #000;
+  color: $text-color;
   text-decoration: none;
 
-  &:visited {
-      color: lighten(#000, 15%);
-  }
+  // &:visited {
+  //     color: lighten(#000, 15%);
+  // }
 
   &:hover {
       color: $text-color;
@@ -186,4 +186,8 @@ pre {
 
 .bold {
 	font-weight: 700;
+}
+
+.center {
+  text-align: center;
 }

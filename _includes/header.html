@@ -3,10 +3,8 @@
 
 <div class="container">
   <header class="site-header">
-    <div class="col4">
-      <h1>Eric Frommelt</h1>
-    </div>
-    <div class="col4">
+    <!-- Site Navigation - Wide -->
+    <div class="col8">
       <nav class="site-nav">
         <ul>
           <li><a href="{{ site.url }}{{ site.baseurl }}">Work</a></li>
@@ -15,12 +13,30 @@
         </ul>
       </nav>
     </div>
-    <!-- <div class="col8">
-      <img class="cover-image" src="../img/transformation.svg">
-    </div> -->
-    <div style="clear: both">
-
+    <div class="col8 brand-wrapper">
+      <div class="logo">
+        <img src="{{ site.url }}{{ site.baseurl }}img/ef_mark1.svg" alt="" />
+      </div>
+      <h1>Eric Frommelt</h1>
     </div>
+
   </header>
+</div>
+
+
+<!-- Site Navigation - Small -->
+<div id="navigation-small">
+	<div id="menu-button">
+		<div class="burger burger-top burger-closed"></div>
+		<div class="burger burger-middle burger-closed"></div>
+		<div class="burger burger-bottom burger-closed"></div>
+	</div>
+	<div id="menu-wrapper" class="menu-closed">
+		<ul id="navlist-mobile">
+      <li><a href="{{ site.url }}{{ site.baseurl }}">Work</a></li>
+      <li><a href="{{ site.url }}{{ site.baseurl }}about">About</a></li>
+      <li><a href="{{ site.url }}{{ site.baseurl }}contact">Contact</a></li>
+		</ul>
+	</div>
 </div>
 <!-- //header.html -->

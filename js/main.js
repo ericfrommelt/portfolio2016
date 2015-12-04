@@ -1,264 +1,32 @@
-// Portfolio pagination for navigation from page to page
-// Array index = location of work in grid, so none of this is automated
+// Toggle mobile nav
+  var $menuBtn = $('#menu-button');
+  var $menuWrap = $('#menu-wrapper');
+  var $burgerTop = $('div.burger-top');
+  var $burgerMiddle = $('div.burger-middle');
+  var $burgerBottom = $('div.burger-bottom');
+  var $menuItem = $('#navlist-mobile a');
+  var menuOpen = false;
 
-// Our portfolio pages
-var pages = {
-        page: [
+  function toggleMenu() {
+    if (menuOpen === false) {
+      $menuWrap.addClass('menu-open').removeClass('menu-closed');
+      $burgerTop.addClass('burger-open').removeClass('burger-closed');
+      $burgerMiddle.addClass('burger-open').removeClass('burger-closed');
+      $burgerBottom.addClass('burger-open').removeClass('burger-closed');
+      menuOpen = true;
+    } else if (menuOpen === true) {
+      $menuWrap.addClass('menu-closed').removeClass('menu-open');
+      $burgerTop.addClass('burger-closed').removeClass('burger-open');
+      $burgerMiddle.addClass('burger-closed').removeClass('burger-open');
+      $burgerBottom.addClass('burger-closed').removeClass('burger-open');
+      menuOpen = false;
+    }
+  }
 
-          {
-            "title": "Conversion",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/transformation/"
-          },
+  $menuBtn.on('click', function() {
+    toggleMenu();
+  });
 
-          {
-            "title": "AR Danger",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/augmented-reality-danger/"
-          },
-
-          {
-            "title": "Big Data Security",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/big-data-security/"
-          },
-
-          {
-            "title": "okcupid Profiles",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/wired-okcupid/"
-          },
-
-          {
-            "title": "Squared",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/squared/"
-          },
-
-          {
-            "title": "Oculus Rift",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/oculus-rift/"
-          },
-
-          {
-            "title": "Resistance",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/resistance/"
-          },
-
-          {
-            "title": "Fairfax",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/fairfax/"
-          },
-
-          {
-            "title": "Visions for Space",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/usc-visions-for-space/"
-          },
-
-          {
-            "title": "Shotlink",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/numbers-shotlink/"
-          },
-
-          {
-            "title": "Lakers Numbers",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/numbers-lakers/"
-          },
-
-          {
-            "title": "Technology Policy",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/technology-policy/"
-          },
-
-          {
-            "title": "Creative Computers",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/creative-computers/"
-          },
-
-          {
-            "title": "Urban Mobility",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/urban-mobility/"
-          },
-
-          {
-            "title": "Get Cryphy",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/get-cryphy/"
-          },
-
-          {
-            "title": "New Car",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/new-car/"
-          },
-
-          {
-            "title": "IBM Pure Data",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/ibm-pure-data/"
-          },
-
-          {
-            "title": "Quant Junkies",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/quant-junkies/"
-          },
-
-          {
-            "title": "Weird Tales: Vampires",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/weird-tales/"
-          },
-
-          {
-            "title": "EnerG2",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/energ2/"
-          },
-
-          {
-            "title": "Styleshifters",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/styleshifters/"
-          },
-
-          {
-            "title": "Impact of Media",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/impact-of-media/"
-          },
-
-          {
-            "title": "Auto Intel",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/auto-intel/"
-          },
-
-          {
-            "title": "Wiretap",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/wiretap/"
-          },
-
-          {
-            "title": "Network Object 2",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object2/"
-          },
-
-          {
-            "title": "Network Object 1",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object1/"
-          },
-
-          {
-            "title": "Observatory",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/observatory/"
-          },
-
-          {
-            "title": "Loop",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/loop/"
-          },
-
-          {
-            "title": "Breakout",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/breakout/"
-          },
-
-          {
-            "title": "Breach",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/breach/"
-          },
-
-          {
-            "title": "Artificial Intelligence",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/artificial-intelligence/"
-          },
-
-          {
-            "title": "NORAD",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/norad/"
-          },
-
-          {
-            "title": "Leak",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/leak/"
-          },
-
-          {
-            "title": "DSP",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/dsp/"
-          },
-
-          {
-            "title": "Integrated Circuit",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/integrated-circuit/"
-          },
-
-          {
-            "title": "Unit",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/unit/"
-          },
-
-          {
-            "title": "GPS",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/gps/"
-          },
-
-          {
-            "title": "Intercept",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/intercept/"
-          },
-
-          {
-            "title": "Encryption Key",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/encryption-key/"
-          },
-
-          {
-            "title": "Google",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/google/"
-          },
-
-          {
-            "title": "Source",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/source/"
-          },
-
-          {
-            "title": "Bunker",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/bunker/"
-          },
-
-          {
-            "title": "Rigged",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/rigged/"
-          }
-        ]
-      }
-
-// Establish some variables
-var currentPage = $("body").find("#page-number").text();
-var currentUrl = window.location.href;
-var pageMax = pages.page.length;
-var previousLink = $("body").find(".previous-project");
-var nextLink = $("body").find(".next-project");
-var getLastPage = pages.page[pages.page.length-1].url;
-var nextUrl;
-var prevUrl;
-
-// Iterate through our array
-for (var i=0; i<=pageMax; i++) {
-  var getUrls = pages.page[i].url;
-  var getFirstPage = pages.page[0].url;
-
-// If we're on the first page, set the Next url and hide the Previous link
-  if (currentUrl == getFirstPage) {
-    nextUrl = pages.page[i+1].url;
-    $("body").find(".next-project").attr("href", nextUrl);
-    previousLink.hide();
-    break;
-  };
-
-// If we're on the last page, set the Previous url and hide the Next link
-  if (currentUrl == getLastPage) {
-    prevUrl = pages.page[pages.page.length-2].url;
-    $("body").find(".previous-project").attr("href", prevUrl);
-    nextLink.hide();
-    break;
-  };
-
-// If we're somewhere in the middle, set the Previous and Next links
-  if (currentUrl == getUrls) {
-    nextUrl = pages.page[i+1].url;
-    prevUrl = pages.page[i-1].url;
-    $("body").find(".next-project").attr("href", nextUrl);
-    $("body").find(".previous-project").attr("href", prevUrl);
-    break;
-  };
-}
+  $menuItem.on('click', function() {
+    toggleMenu();
+  });

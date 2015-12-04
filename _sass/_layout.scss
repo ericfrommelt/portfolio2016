@@ -15,6 +15,7 @@
 // For spacing between content and the footer
 .work-wrapper, #about, #contact {
 	margin-bottom: 4em;
+	@include clearfix;
 }
 
 .work-description, #about p, #contact p {
@@ -34,19 +35,34 @@
 	width: 90%;
 	margin: 2em auto 6em auto;
 	padding-bottom: 2em;
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	// border-bottom: 1px solid rgba(0, 0, 0, .1);
+	@include clearfix;
+
 	@media only screen and (min-width: 2000px) {
 		width: 70%;
+	}
+
+	@media only screen and (max-width: 767px) {
+		text-align: center;
 	}
 }
 
 .site-header h1 {
-  font-size: 2em;
+  font-size: 1.2em;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .3em;
   color: $text-color;
+}
+
+.brand-wrapper {
+	text-align: center;
+}
+
+.logo {
+	margin: 0 auto 2em auto;
+	width: 13em;
 }
 
 
@@ -58,7 +74,7 @@
 \*------------------------------------*/
 
 .site-footer {
-	border-top: 1px solid rgba(0, 0, 0, .1);
+	// border-top: 1px solid rgba(0, 0, 0, .1);
 	clear:both;
 	// margin: 4em 0;
 	padding: 4em 0;
@@ -76,6 +92,10 @@
 	display: block;
 	color: $text-color;
 	font-size: 1.4em;
+
+	@media only screen and (max-width: 767px) {
+		display: none;
+	}
 }
 
 .site-nav ul {
@@ -99,12 +119,122 @@
 
 
 /*------------------------------------*\
+    #MOBILE SITE-NAVIGATION
+\*------------------------------------*/
+#navigation-small {
+	display: block;
+	cursor: pointer;
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}
+
+#menu-wrapper {
+	position: absolute;
+	top: 0;
+	z-index: 8888;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	@include default-transition;
+
+}
+
+#menu-button {
+	position: fixed;
+	top: 2em;
+	right: 1.5em;
+	z-index: 9999;
+}
+
+.burger {
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 4px;
+	margin: 4px 0;
+	background: rgba(255, 255, 255, 1);
+	@include default-transition;
+}
+
+.burger-middle.burger-open {
+	@include default-transition;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.burger-middle.burger-closed {
+	@include default-transition;
+	background-color: rgba(255, 255, 255, 100);
+}
+
+.burger-top.burger-closed {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	top: 0px;
+}
+
+.burger-top.burger-open {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 8px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.burger-bottom.burger-closed {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	top: 0px;
+}
+
+.burger-bottom.burger-open {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: -8px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.menu-closed {
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(0, 0, 0);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.menu-open {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+#navlist-mobile {
+	font-family: $text-font;
+	text-transform: uppercase;
+	text-align: center;
+	position:relative;
+	top: 50%;
+	height: 60%;
+	font-size: 3em;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin: 0;
+	a {
+		color: #FFF;
+	}
+	li {
+		padding: 1em;
+	}
+}
+
+/*------------------------------------*\
     #WORK INDEX PAGE
 \*------------------------------------*/
 
 .work-thumbnail {
 	display: block;
 	overflow: hidden;
+	@media only screen and (max-width: 767px) {
+		margin-bottom: 1em;
+	}
 }
 
 .work-thumbnail figcaption {
@@ -161,12 +291,17 @@
 
 .work-info {
 	line-height: 2em;
+	@media only screen and (max-width: 767px) {
+		text-align: center;
+	}
 }
 
 .work-title {
-	font-size: 1.6em;
+	font-size: 4em;
+	font-weight: 900;
+	line-height: 1em;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  // letter-spacing: .1em;
   margin-bottom: 1em;
 }
 
@@ -174,6 +309,10 @@
 .work-description {
 	font-size: 1.2em;
 	padding-right: 30%;
+
+	@media only screen and (max-width: 767px) {
+		padding-right: 0;
+	}
 }
 
 .work-image {
@@ -208,12 +347,13 @@
 	  position: relative;
 		bottom: 0;
 		right: 0;
-		margin: 3em 0;
+		margin: 1em 0;
+		display: none;
 	}
 
 }
 
-.project-nav ul {
+.project-nav ul, .mobile-project-nav ul {
 	margin: 0;
 }
 
@@ -235,6 +375,25 @@
 
 
 
+.mobile-project-nav {
+	display: none;
+	text-align: center;
+	margin-bottom: 2em;
+
+	@media only screen and (max-width: 767px) {
+		display: block;
+	}
+}
+
+.mobile-project-nav a {
+	color: #fff;
+	background: #000;
+	font-size: 1.5em;
+	padding: .5em 0;
+	display: inline-block;
+	margin: .5em 0;
+	width: 100%;
+}
 /*------------------------------------*\
     #ABOUT PAGE
 \*------------------------------------*/
