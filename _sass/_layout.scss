@@ -114,7 +114,7 @@
 
   h2 {
     font-weight: 400;
-    font-size: 2em;
+    font-size: 1.5em;
     text-transform: uppercase;
     margin-bottom: 1em;
   }
@@ -130,7 +130,7 @@
 }
 .mc-field-group > label {
   padding-right: 1em;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .clear {
@@ -146,23 +146,17 @@ input{
     padding: 11px;
     border: solid 1px #FFF;
     outline: 0;
-    font: $text-font;
-    font-size: 1.2em;
+    font-family: $text-font;
+    font-size: 1em;
     width: 20em;
     background: #FFFFFF;
     }
 
-input:hover,.preview-block input:focus{
-    border-color: #b1b1b1;
-    }
-
 .clear input{
     width: auto;
-    padding: .56em 1.4em;
+    padding: .75em 1.4em;
     background: #FFF;
     border: 0;
-    font-size: 1.2em;
-    font-family: $text-font;
     color: #000;
     cursor: pointer;
     }
