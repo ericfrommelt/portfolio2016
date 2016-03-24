@@ -169,6 +169,21 @@ input{
 
 .colophon {
   margin: 8em 0 4em 0;
+  line-height: 2em;
+}
+
+.social-links {
+  margin: 0 auto;
+
+  ul {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  li {
+    float: left;
+    padding: 0 1em;
+  }
 }
 
 
@@ -349,17 +364,16 @@ input{
 }
 
 .work-thumbnail figcaption h2 {
-	font-size: 1.2em;
+	font-size: 1.6em;
 	color: #FFF;
 	margin-bottom: .8em;
-	letter-spacing: .3em;
+	letter-spacing: .1em;
 	text-transform: uppercase;
 }
 
 .work-thumbnail figcaption p {
 	font-size: 1em;
 	color: #FFF;
-	letter-spacing: .3em;
 }
 
 .work-thumbnail figcaption .work-details {
@@ -390,8 +404,8 @@ input{
 }
 
 .work-title {
-	font-size: 4em;
-	font-weight: 900;
+	font-size: 3em;
+	font-weight: 200;
 	line-height: 1em;
   text-transform: uppercase;
   // letter-spacing: .1em;
@@ -497,17 +511,18 @@ input{
 }
 
 #about h1 {
-	font-size: 4em;
+	font-size: 3em;
 	margin-bottom: .5em;
 }
 
 #about h2 {
-	font-size: 2em;
+	font-size: 1.5em;
 	margin: 1em 0 .5em 0;
 }
 
 #about p, #contact p {
-	font-size: 2em;
+	font-size: 1.2em;
+  line-height: 1.6em;
 
 	@media only screen and (min-width: 767px) {
 	margin-right: 20%;
@@ -516,12 +531,12 @@ input{
 }
 
 #about ul {
-	font-size: 1.5em;
+	font-size: 1em;
 	margin: 0;
 }
 
 #about li {
-	line-height: 1.2em;
+	line-height: 1.6em;
 }
 
 
@@ -533,5 +548,6 @@ input{
 \*------------------------------------*/
 
 #contact a {
-	text-decoration:underline;
+  padding-bottom: .05em;
+  border-bottom: 1px solid #fff;
 }
