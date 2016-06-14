@@ -33,7 +33,7 @@
 
 .site-header {
 	width: 90%;
-	margin: 6em auto 6em auto;
+	margin: 3em auto 6em auto;
 	padding-bottom: 2em;
 
   h1 {
@@ -42,22 +42,12 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .3em;
-    color: $text-color;
+    color: #252525;
+    @include default-transition;
 
     @media only screen and (max-width: 767px) {
       display: none;
     }
-  }
-
-  .brand-wrapper {
-  	text-align: center;
-  }
-
-  .logo {
-  	margin: 0 auto;
-  	width: 6em;
-    position: absolute;
-    top: -2.4em; left: 0; bottom: 0; right: 0;
   }
 
 	@include clearfix;
@@ -71,13 +61,8 @@
 	}
 }
 
-.site-header h1 {
-  font-size: 1.4em;
-  font-style: normal;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .3em;
-  color: $text-color;
+.site-header h1:hover {
+  color: #fff;
 }
 
 .brand-wrapper {
@@ -179,7 +164,7 @@ input{
     display: inline-block;
     margin: 0;
   }
-  
+
   li {
     float: left;
     padding: 0 1em;
@@ -336,6 +321,29 @@ input{
 /*------------------------------------*\
     #WORK INDEX PAGE
 \*------------------------------------*/
+.whitespace {
+  background: #2eeada;
+  background: -moz-linear-gradient(left,  #2eeada 0%, #f9255e 100%);
+  background: -webkit-linear-gradient(left,  #2eeada 0%,#f9255e 100%);
+  background: linear-gradient(to right,  #2eeada 0%,#f9255e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2eeada', endColorstr='#f9255e',GradientType=1 );
+
+  height: 8em;
+  margin-bottom: 2em;
+
+  @media only screen and (max-width: 767px) {
+		height: 4em;
+	}
+}
+
+.work-header h2 {
+  color: #000;
+  font-size: 8em;
+  font-family: $display-font;
+  padding: .2em 0 0 .2em;
+  text-transform: uppercase;
+  font-weight: 200;
+}
 
 .work-thumbnail {
 	display: block;
