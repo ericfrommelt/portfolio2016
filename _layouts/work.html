@@ -16,7 +16,19 @@ layout: default
         </div>
 
         <article class="work-content">
-          {{ content }}
+          <main>
+            <article class="work-info">
+              <h1 class="work-title">{{ page.title }}</h1>
+              <p class="work-description">{{ page.description }}</p>
+              <h2 class="client-name col3 alpha"><span class="bold">Client:</span> {{ page.client }}</h2>
+              {% if page.artdirector %}<h2 class="client-name col5 omega"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>{% endif %}
+            </article>
+            <section class="images">
+              <figure class="work-image">
+                {{ content }}
+              </figure>
+            </section>
+          </main>
         </article>
 
         <!-- Mobile project navigation -->

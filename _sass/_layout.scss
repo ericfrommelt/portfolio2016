@@ -2,7 +2,11 @@
     #SITE-WIDE SPACING & ATTRIBUTES
 \*------------------------------------*/
 
-#work-index, #work-detail, #about, #contact, .site-footer {
+main {
+  min-height: 100vh;
+}
+
+#work-index, #about, #contact, .site-footer {
   width: 90%;
   margin: 0 auto 0 auto;
 	position:relative;
@@ -407,8 +411,14 @@ input{
 .work-info {
 	line-height: 2em;
 	@media only screen and (max-width: 767px) {
-		text-align: center;
+    position: static!important;
+    width: 90%;
+    height:auto;
 	}
+  position: fixed;
+  top: 18em;
+  right: 3em;
+  width: calc(33.333% - 1.5em);
 }
 
 .work-title {
@@ -423,14 +433,22 @@ input{
 
 .work-description {
 	font-size: 1.2em;
-	padding-right: 30%;
-
 	@media only screen and (max-width: 767px) {
 		padding-right: 0;
 	}
 }
 
-.work-image {
+
+
+.images {
+  width: calc(66.666% - 1.5em);
+  padding-right: 3em;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.work-image img {
 	margin: 1em 0;
 }
 
