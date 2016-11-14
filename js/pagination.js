@@ -1,3 +1,6 @@
+---
+---
+
 // Portfolio pagination for navigation from page to page
 // Array index = location of work in grid, so none of this is automated
 
@@ -7,217 +10,217 @@ var pages = {
 
           {
             "title": "Conversion",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/transformation/"
+            "url": "{{ site.url }}/work/transformation/"
           },
 
           {
             "title": "AR Danger",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/augmented-reality-danger/"
+            "url": "{{ site.url }}/work/augmented-reality-danger/"
           },
 
           {
             "title": "Big Data Security",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/big-data-security/"
+            "url": "{{ site.url }}/work/big-data-security/"
           },
 
           {
             "title": "okcupid Profiles",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/wired-okcupid/"
+            "url": "{{ site.url }}/work/wired-okcupid/"
           },
 
           {
             "title": "Squared",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/squared/"
+            "url": "{{ site.url }}/work/squared/"
           },
 
           {
             "title": "Oculus Rift",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/oculus-rift/"
+            "url": "{{ site.url }}/work/oculus-rift/"
           },
 
           {
             "title": "Resistance",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/resistance/"
+            "url": "{{ site.url }}/work/resistance/"
           },
 
           {
             "title": "Fairfax",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/fairfax/"
+            "url": "{{ site.url }}/work/fairfax/"
           },
 
           {
             "title": "Visions for Space",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/usc-visions-for-space/"
+            "url": "{{ site.url }}/work/usc-visions-for-space/"
           },
 
           {
             "title": "Shotlink",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/numbers-shotlink/"
+            "url": "{{ site.url }}/work/numbers-shotlink/"
           },
 
           {
             "title": "Lakers Numbers",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/numbers-lakers/"
+            "url": "{{ site.url }}/work/numbers-lakers/"
           },
 
           {
             "title": "Technology Policy",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/technology-policy/"
+            "url": "{{ site.url }}/work/technology-policy/"
           },
 
           {
             "title": "Creative Computers",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/creative-computers/"
+            "url": "{{ site.url }}/work/creative-computers/"
           },
 
           {
             "title": "Urban Mobility",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/urban-mobility/"
+            "url": "{{ site.url }}/work/urban-mobility/"
           },
 
           {
             "title": "Get Cryphy",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/get-cryphy/"
+            "url": "{{ site.url }}/work/get-cryphy/"
           },
 
           {
             "title": "New Car",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/new-car/"
+            "url": "{{ site.url }}/work/new-car/"
           },
 
           {
             "title": "IBM Pure Data",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/ibm-pure-data/"
+            "url": "{{ site.url }}/work/ibm-pure-data/"
           },
 
           {
             "title": "Quant Junkies",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/quant-junkies/"
+            "url": "{{ site.url }}/work/quant-junkies/"
           },
 
           {
             "title": "Weird Tales: Vampires",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/weird-tales/"
+            "url": "{{ site.url }}/work/weird-tales/"
           },
 
           {
             "title": "EnerG2",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/energ2/"
+            "url": "{{ site.url }}/work/energ2/"
           },
 
           {
             "title": "Styleshifters",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/styleshifters/"
+            "url": "{{ site.url }}/work/styleshifters/"
           },
 
           {
             "title": "Impact of Media",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/impact-of-media/"
+            "url": "{{ site.url }}/work/impact-of-media/"
           },
 
           {
             "title": "Auto Intel",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/auto-intel/"
+            "url": "{{ site.url }}/work/auto-intel/"
           },
 
           {
             "title": "Wiretap",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/wiretap/"
+            "url": "{{ site.url }}/work/wiretap/"
           },
 
           {
             "title": "Network Object 2",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object2/"
+            "url": "{{ site.url }}/work/network-object2/"
           },
 
           {
             "title": "Network Object 1",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/network-object1/"
+            "url": "{{ site.url }}/work/network-object1/"
           },
 
           {
             "title": "Observatory",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/observatory/"
+            "url": "{{ site.url }}/work/observatory/"
           },
 
           {
             "title": "Loop",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/loop/"
+            "url": "{{ site.url }}/work/loop/"
           },
 
           {
             "title": "Breakout",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/breakout/"
+            "url": "{{ site.url }}/work/breakout/"
           },
 
           {
             "title": "Breach",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/breach/"
+            "url": "{{ site.url }}/work/breach/"
           },
 
           {
             "title": "Artificial Intelligence",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/artificial-intelligence/"
+            "url": "{{ site.url }}/work/artificial-intelligence/"
           },
 
           {
             "title": "NORAD",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/norad/"
+            "url": "{{ site.url }}/work/norad/"
           },
 
           {
             "title": "Leak",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/leak/"
+            "url": "{{ site.url }}/work/leak/"
           },
 
           {
             "title": "DSP",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/dsp/"
+            "url": "{{ site.url }}/work/dsp/"
           },
 
           {
             "title": "Integrated Circuit",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/integrated-circuit/"
+            "url": "{{ site.url }}/work/integrated-circuit/"
           },
 
           {
             "title": "Unit",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/unit/"
+            "url": "{{ site.url }}/work/unit/"
           },
 
           {
             "title": "GPS",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/gps/"
+            "url": "{{ site.url }}/work/gps/"
           },
 
           {
             "title": "Intercept",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/intercept/"
+            "url": "{{ site.url }}/work/intercept/"
           },
 
           {
             "title": "Encryption Key",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/encryption-key/"
+            "url": "{{ site.url }}/work/encryption-key/"
           },
 
           {
             "title": "Google",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/google/"
+            "url": "{{ site.url }}/work/google/"
           },
 
           {
             "title": "Source",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/source/"
+            "url": "{{ site.url }}/work/source/"
           },
 
           {
             "title": "Bunker",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/bunker/"
+            "url": "{{ site.url }}/work/bunker/"
           },
 
           {
             "title": "Rigged",
-            "url": "http://sites:8888/ericfrommelt2015/_site/work/rigged/"
+            "url": "{{ site.url }}/work/rigged/"
           }
         ]
       }

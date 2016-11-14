@@ -221,28 +221,52 @@ input{
 #navigation-small {
 	display: block;
 	cursor: pointer;
-	@media screen and (min-width: 768px) {
-		display: none;
-	}
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+}
+
+.navsmall-open {
+  z-index: 9999;
+}
+
+.navsmall-closed {
+  z-index: 0;
 }
 
 #menu-wrapper {
 	position: absolute;
-	top: 0;
-	z-index: 8888;
+	top: 0px;
 	width: 100%;
 	height: 100%;
+  display: block;
 	background-color: rgba(0, 0, 0, 0.9);
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 	@include default-transition;
-
 }
+
+.menu-closed {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.menu-open {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
 
 #menu-button {
 	position: fixed;
 	top: 2em;
 	right: 1.5em;
-	z-index: 9999;
+  z-index: 10000;
+  @media screen and (min-width: 768px) {
+		display: none;
+	}
 }
 
 .burger {
@@ -289,18 +313,6 @@ input{
 	transform: rotate(-45deg);
 	top: -8px;
 	background-color: rgba(255, 255, 255, 1);
-}
-
-.menu-closed {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(0, 0, 0);
-	opacity: 0;
-	visibility: hidden;
-}
-
-.menu-open {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
 }
 
 #navlist-mobile {
@@ -427,7 +439,7 @@ input{
 	line-height: 1em;
   text-transform: uppercase;
   // letter-spacing: .1em;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
 
 
@@ -452,7 +464,7 @@ input{
 	margin: 1em 0;
 }
 
-.client-name, .art-director {
+.art-director {
 	font-family: $text-font;
 	font-style: normal;
 	font-weight: 400;
@@ -460,6 +472,18 @@ input{
 	font-size: 1em;
 	letter-spacing: .1em;
 	opacity: .4;
+}
+
+.client-name {
+  font-family: $text-font;
+  font-style: normal;
+  font-weight: 400;
+  color: $text-color;
+  font-size: 1.4em;
+  letter-spacing: .1em;
+  opacity: .4;
+  margin-bottom: .5em;
+
 }
 
 

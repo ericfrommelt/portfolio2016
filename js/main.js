@@ -5,17 +5,20 @@
   var $burgerMiddle = $('div.burger-middle');
   var $burgerBottom = $('div.burger-bottom');
   var $menuItem = $('#navlist-mobile a');
+  var $navsmall = $('#navigation-small');
   var menuOpen = false;
 
   function toggleMenu() {
     if (menuOpen === false) {
       $menuWrap.addClass('menu-open').removeClass('menu-closed');
+      $navsmall.addClass('navsmall-open').removeClass('navsmall-closed');
       $burgerTop.addClass('burger-open').removeClass('burger-closed');
       $burgerMiddle.addClass('burger-open').removeClass('burger-closed');
       $burgerBottom.addClass('burger-open').removeClass('burger-closed');
       menuOpen = true;
     } else if (menuOpen === true) {
       $menuWrap.addClass('menu-closed').removeClass('menu-open');
+      $navsmall.addClass('navsmall-closed').removeClass('navsmall-open');
       $burgerTop.addClass('burger-closed').removeClass('burger-open');
       $burgerMiddle.addClass('burger-closed').removeClass('burger-open');
       $burgerBottom.addClass('burger-closed').removeClass('burger-open');
