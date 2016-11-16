@@ -225,6 +225,9 @@ input{
   height: 100%;
   width: 100%;
   top: 0px;
+  @media screen and (min-width: 768px) {
+		display: none;
+	}
 }
 
 .navsmall-open {
