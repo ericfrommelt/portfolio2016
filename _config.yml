@@ -12,3 +12,14 @@ github_username:  ericfrommelt
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-feed
+
+exclude:
+  - _dev
+  - gulpfile.js
+  - node_modules
+  - package.json
+
+  keep_files: [_site, css]
