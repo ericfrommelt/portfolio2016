@@ -2,8 +2,17 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var child = require('child_process');
 var gutil = require('gulp-util');
+var bower = require('gulp-bower');
 var browserSync = require('browser-sync').create();
+
+var bowerDir = 'bower_components';
 var siteRoot = '_site';
+
+// Bower
+gulp.task('bower', function() {
+  return bower()
+  .pipe(gulp.dest('_site/bower_components'));
+});
 
 // Compile sass to css
 gulp.task('sass', function() {
@@ -11,6 +20,10 @@ gulp.task('sass', function() {
   .pipe(sass())
   .pipe(gulp.dest('_site/css'));
 });
+
+// Compile JS
+gulp.src('_dev/js/**/*.js')
+  .pipe(gulp.dest('_site/js'));
 
 // Rebuild Jekyll
 gulp.task('jekyll', function() {
@@ -25,6 +38,7 @@ gulp.task('jekyll', function() {
 // Watch files
 gulp.task('watch', function() {
   gulp.watch('_dev/scss/**/*.scss', ['sass']);
+  gulp.watch('_dev/js/**/*.js');
 });
 
 // Spin up local server
@@ -38,4 +52,4 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('default', ['sass', 'watch', 'jekyll', 'serve']);
+gulp.task('default', ['bower', 'sass', 'watch', 'jekyll', 'serve']);

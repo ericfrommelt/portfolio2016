@@ -3,3 +3,4 @@ _site
 .sass-cache
 img
 node_modules
+bower_components
