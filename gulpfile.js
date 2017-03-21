@@ -1,55 +1,104 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var child = require('child_process');
-var gutil = require('gulp-util');
-var bower = require('gulp-bower');
 var browserSync = require('browser-sync').create();
+var del = require('del');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var run = require('gulp-run');
+var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
 
-var bowerDir = 'bower_components';
-var siteRoot = '_site';
+var config = require('./_dev/gulp/config');
+var paths = require('./_dev/gulp/paths');
 
-// Bower
-gulp.task('bower', function() {
-  return bower()
-  .pipe(gulp.dest('_site/bower_components'));
-});
-
-// Compile sass to css
-gulp.task('sass', function() {
-  return gulp.src('_dev/scss/main.scss')
+// Build styles
+gulp.task('build:styles', function() {
+  return gulp.src(paths.devSassFiles + '/main.scss')
   .pipe(sass())
-  .pipe(gulp.dest('_site/css'));
+  .pipe(gulp.dest(paths.siteCssFiles))
+  .pipe(browserSync.stream())
+  .on('error', gutil.log);
 });
 
-// Compile JS
-gulp.src('_dev/js/**/*.js')
-  .pipe(gulp.dest('_site/js'));
+// Build Bower Components
+gulp.task('build:bower', function() {
+  return gulp.src([paths.bowerComponentsDir + 'jquery/dist/jquery.min.js',
+                   paths.bowerComponentsDir + 'picturefill/dist/picturefill.min.js'])
+  .pipe(gulp.dest('_site/scripts/'))
+  .on('error', gutil.log);
+});
 
-// Rebuild Jekyll
-gulp.task('jekyll', function() {
-  var jekyll = child.spawn('jekyll', ['build', '--watch', 'drafts']);
-  var jekyllLogger = (buffer) => {
-    buffer.toString().split(/\n/).forEach((message) => gutil.log('Jekyll: ' + message));
+// Build scripts
+// ToDo: Optimize scripts
+gulp.task('build:scripts', function() {
+  return gulp.src(paths.devJsFiles + paths.jsPattern)
+  .pipe(gulp.dest(paths.siteScriptFiles))
+  .on('error', gutil.log);
+})
+
+// Build images
+// ToDo: Optimize images
+gulp.task('build:images', function() {
+  return gulp.src(paths.devImageFiles + '**/*.+(png|jpg|jpeg|gif|svg)')
+  .pipe(gulp.dest(paths.siteDir))
+  .on('error', gutil.log);
+});
+
+// Run Jekyll Build
+gulp.task('build:jekyll', function() {
+  var shellCommand = 'bundle exec jekyll build --config _config.yml';
+  if (config.drafts) {
+    shellCommand += ' --drafts';
   };
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
+  return gulp.src(paths.jekyllDir)
+  .pipe(run(shellCommand))
+  .on('error', gutil.log);
 });
 
-// Watch files
-gulp.task('watch', function() {
-  gulp.watch('_dev/scss/**/*.scss', ['sass']);
-  gulp.watch('_dev/js/**/*.js');
+// Run Jekyll Build to serve locally
+gulp.task('build:jekyll:local', function() {
+  var shellCommand = 'bundle exec jekyll build --config _config_dev.yml';
+  if (config.drafts) {
+    shellCommand += ' --drafts';
+  };
+  return gulp.src(paths.jekyllDir)
+  .pipe(run(shellCommand))
+  .on('error', gutil.log);
 });
 
-// Spin up local server
-gulp.task('serve', function() {
+
+// Build site
+// Optionally pass the --drafts flag to enable including drafts
+gulp.task('build', function(callback) {
+  runSequence('build:jekyll', 'build:styles', 'build:images', 'build:bower', 'build:scripts', callback);
+})
+
+gulp.task('build:local', function(callback) {
+  runSequence('build:jekyll:local', 'build:styles', 'build:images', 'build:bower', 'build:scripts', callback);
+})
+
+// Default task: builds site
+gulp.task('default', ['build']);
+
+// Special tasks for building and then reloading browserSync
+gulp.task('build:jekyll:watch', ['build:jekyll'], function(callback) {
+  browserSync.reload();
+  callback();
+})
+
+// Static server
+gulp.task('serve', ['build:local'], function() {
   browserSync.init({
-    files: [siteRoot + '/**'],
-    port: 4000,
-    server: {
-      baseDir: siteRoot
-    }
+    server: paths.siteDir
   });
-});
+})
 
-gulp.task('default', ['bower', 'sass', 'watch', 'jekyll', 'serve']);
+// Watch site settings
+gulp.watch('_config.yml', ['build:jekyll']);
+
+// Watch dev .scss files, changes are piped to browserSync
+gulp.watch('_dev/styles/**/*.scss', ['build:styles']);
+
+// Watch JS files
+gulp.watch('_dev/scripts/**/*.js', ['build:scripts']);
+
+// Watch Jekyll html files
+gulp.watch(['**/*.html', '!_site/**/*.*'], ['build:jekyll:watch']);
