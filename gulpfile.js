@@ -101,4 +101,4 @@ gulp.watch('_dev/styles/**/*.scss', ['build:styles']);
 gulp.watch('_dev/scripts/**/*.js', ['build:scripts']);
 
 // Watch Jekyll html files
-gulp.watch(['**/*.html', '!_site/**/*.*'], ['build:jekyll:watch']);
+gulp.watch(['**/*.html', '!_site/**/*.*'], ['build:local']);

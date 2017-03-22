@@ -21,5 +21,12 @@ exclude:
   - _dev
   - node_modules
   - package.json
+  - bower.json
+  - Gemfile
+  - Gemfile.lock
 
-keep_files: [_site, css]
+keep_files: []
+
+collections:
+  work:
+    output: true

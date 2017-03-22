@@ -23,3 +23,7 @@ exclude:
   - Gemfile.lock
 
 keep_files: []
+
+collections:
+  work:
+    output: true
