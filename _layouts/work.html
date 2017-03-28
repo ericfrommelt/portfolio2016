@@ -2,6 +2,8 @@
 layout: default
 ---
 <!-- work.html -->
+
+
       <div id="work-detail">
         <!-- Project navigation -->
         <div class="col8">
@@ -35,20 +37,29 @@ layout: default
           </nav>
         </div>
 
-        <article class="work-content">
-          <main>
-            <article class="work-info">
-              <h1 class="work-title">{{ page.title }}</h1>
-              {% if page.client %}<h2 class="client-name">{{ page.client }}</h2>{% endif %}
-              <p class="work-description">{{ page.description }}</p>
-              {% if page.artdirector %}<h2 class="art-director col5 omega"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>{% endif %}
-            </article>
-            <section class="images">
-              <figure class="work-image">
-                {{ content }}
-              </figure>
-            </section>
-          </main>
+        <article class="work-content col10 alpha">
+          <article class="work-info">
+            <h1 class="work-title">{{ page.title }}</h1>
+
+            <div class="project-meta">
+              {% if page.client %}
+              <h2 class="client-name">{{ page.client }}</h2>
+              {% endif %}
+
+              {% if page.artdirector %}
+              <h2 class="art-director"><span class="bold">Art Director:</span> {{ page.artdirector }}</h2>
+              {% endif %}
+            </div>
+
+            {% if page.description %}
+            <p class="work-description col11 alpha">{{ page.description }}</p>
+            {% endif %}
+          </article>
+          <section class="images">
+            <figure class="work-image">
+              {{ content }}
+            </figure>
+          </section>
         </article>
 
         <!-- Mobile project navigation -->
@@ -62,6 +73,7 @@ layout: default
           </nav>
         </div>
       </div>
+
 <!-- //work.html -->
 
       <script>

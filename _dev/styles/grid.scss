@@ -20,11 +20,10 @@
 
 
 
-
 /*------------------------------------*\
-    #EIGHT COLUMN GRID
+    #TWELVE COLUMN GRID
 \*------------------------------------*/
-.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8 {
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
   float: left;
   display: inline;
   margin-left:  .744047619048%; /* 10px / 1344px */
@@ -32,42 +31,53 @@
 }
 
 // Margin for index grid
-#work-index .col2, #work-index .col4 { margin: .744047619048%; }
+// #work-index .col4 { margin: .744047619048%; padding: .5em; }
 
 // Nested Column classes
-.col1.alpha, .col2.alpha, .col3.alpha, .col4.alpha, .col5.alpha, .col6.alpha, .col7.alpha, .col8.alpha {
+.col1.alpha, .col2.alpha, .col3.alpha, .col4.alpha, .col5.alpha, .col6.alpha, .col7.alpha, .col8.alpha, .col9.alpha, .col10.alpha, .col11.alpha, .col12.alpha {
   margin-left:  0;
 }
 
-.col1.omega, .col2.omega, .col3.omega, .col4.omega, .col5.omega, .col6.omega, .col7.omega, .col8.omega {
+.col1.omega, .col2.omega, .col3.omega, .col4.omega, .col5.omega, .col6.omega, .col7.omega, .col8.omega, .col9.omega, .col10.omega, .col11.omega, .col12.omega {
   margin-right:  0;
 }
 
 // Column classes
-.col1 { width: 11.011904761905%; /*  148px / 1344px */ }
-.col2 { width: 23.511904761905%; /*  316px / 1344px */ }
-.col3 { width: 36.011904761905%; /*  484px / 1344px */ }
-.col4 { width: 48.511904761905%; /*  652px / 1344px */ }
-.col5 { width: 61.011904761905%; /*  820px / 1344px */ }
-.col6 { width: 73.511904761905%; /*  988px / 1344px */ }
-.col7 { width: 86.011904761905%; /* 1156px / 1344px */ }
-.col8 { width: 98.511904761905%; /* 1324px / 1344px */ }
+.col1  { width:  5.5059523809524%;  /* 74px / 1344px */ }
+.col2  { width: 13.9880952380952%;  /* 188px / 1344px */ }
+.col3  { width: 22.3214285714286%;  /* 300px / 1344px */ }
+.col4  { width: 30.8779761904762%;  /* 415px / 1344px */ }
+.col5  { width: 39.360119047619%;   /* 529px / 1344px */ }
+.col6  { width: 47.7678571428571%;  /* 642px / 1344px */ }
+.col7  { width: 56.25%;             /* 756px / 1344px */ }
+.col8  { width: 64.7321428571429%;  /* 870px / 1344px */ }
+.col9  { width: 73.139880952381%;   /* 983px / 1344px */ }
+.col10 { width: 74.1815476190476%;  /* 997px / 1344px */ }
+.col11 { width: 90.0297619047619%;  /* 1210px / 1344px */ }
+.col12 { width: 98.5119047619048%;  /* 1324px / 1344px */ }
 
 // Offsets
-.offset-by-one    { padding-left: 12.5%;  /*  168px / 1344px */ }
-.offset-by-two    { padding-left: 25%;    /*  336px / 1344px */ }
-.offset-by-three  { padding-left: 37.5%;  /*  504px / 1344px */ }
-.offset-by-four   { padding-left: 50%;    /*  672px / 1344px */ }
-.offset-by-five   { padding-left: 62.5%;  /*  840px / 1344px */ }
-.offset-by-six    { padding-left: 75%;    /* 1008px / 1344px */ }
-.offset-by-seven  { padding-left: 87.5%;  /* 1176px / 1344px */ }
+.offset-by-one    { padding-left:  6.9940476190476%;  /*  94px / 1344px */ }
+.offset-by-two    { padding-left: 15.4761904761905%;  /*  208px / 1344px */ }
+.offset-by-three  { padding-left: 23.8095238095238%;  /*  320px / 1344px */ }
+.offset-by-four   { padding-left: 32.3660714285714%;  /*  435px / 1344px */ }
+.offset-by-five   { padding-left: 40.8482142857143%;  /*  549px / 1344px */ }
+.offset-by-six    { padding-left: 49.2559523809524%;  /* 662px / 1344px */ }
+.offset-by-seven  { padding-left: 57.7380952380952%;  /* 776px / 1344px */ }
 
-@media only screen and (max-width: 767px) {
-  .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8 {
-    width: 99.250374812594%; /* 1324px / 1334px */
+.offset-by-eight   { padding-left: 66.2202380952381%; /* 890px / 1344px */ }
+.offset-by-nine    { padding-left: 74.6279761904762%; /* 1003px / 1344px */ }
+.offset-by-ten     { padding-left: 83.110119047619%; /* 1117px / 1344px */ }
+.offset-by-eleven  { padding-left: 91.5178571428571%; /* 1230px / 1344px */ }
+
+@media only screen and (max-width: $sidebar-breakpoint) {
+  .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+    width: 100%; /* 1324px / 1334px */
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .offset-by-one, .offset-by-two, .offset-by-three, .offset-by-four, .offset-by-five, .offset-by-six, .offset-by-seven {
+  .offset-by-one, .offset-by-two, .offset-by-three, .offset-by-four, .offset-by-five, .offset-by-six, .offset-by-seven, .offset-by-eight, .offset-by-nine, .offset-by-ten, .offset-by-eleven {
     padding-left: 0;
   }
 }

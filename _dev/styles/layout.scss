@@ -2,18 +2,17 @@
     #SITE-WIDE SPACING & ATTRIBUTES
 \*------------------------------------*/
 
-main {
-  min-height: 100vh;
-}
 
-#work-index, #about, #contact, .site-footer {
-  width: 90%;
-  margin: 0 auto 0 auto;
-	position:relative;
+#work-index, #work-detail, #about, #contact, .site-footer {
+  width: 100%;
+  position:relative;
+  padding: 0 3em;
 
-	@media only screen and (min-width: 2000px) {
-		width: 70%;
-	}
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    width: 80%;
+    margin: 0 0 0 auto;
+  }
+
 }
 
 // For spacing between content and the footer
@@ -23,8 +22,7 @@ main {
 }
 
 .work-description, #about p, #contact p {
-	margin-bottom: 1em;
-	line-height: 1.2em;
+	line-height: 2em;
 }
 
 
@@ -36,47 +34,76 @@ main {
 \*------------------------------------*/
 
 .site-header {
-	width: 90%;
-	margin: 3em auto 6em auto;
-	padding-bottom: 2em;
+  position: relative;
+  width: 100%;
+  padding: 3em;
+
+
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
 
   h1 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .3em;
-    color: #252525;
-    @include default-transition;
+    letter-spacing: none;
+    color: white;
+  }
+}
 
-    @media only screen and (max-width: 767px) {
-      display: none;
-    }
+.social-links {
+  margin:0;
+  display: none;
+
+  li {
+    float: left;
+    padding: 0 1em 0 0;
+    display: inline-block;
+    width: 40px;
   }
 
-	@include clearfix;
-
-	@media only screen and (min-width: 2000px) {
-		width: 70%;
-	}
-
-	@media only screen and (max-width: 767px) {
-		text-align: center;
-	}
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    display: inline-block;
+  }
 }
 
-.site-header h1:hover {
-  color: #fff;
+
+
+
+/*------------------------------------*\
+    #SITE-NAVIGATION
+\*------------------------------------*/
+
+.site-nav {
+	display: flex;
+  flex-direction: row;
+	color: $text-color;
+	font-size: 1.2em;
+
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    display: block;
+  }
+
 }
 
-.brand-wrapper {
-	text-align: center;
+.site-nav a {
+  font-family: $display-font;
+  text-transform: uppercase;
+  margin: 1em 0;
+	display: block;
+  padding-right: 1.2em;
 }
 
-.logo {
-	margin: 0 auto 2em auto;
-	width: 13em;
-}
 
 
 
@@ -90,12 +117,284 @@ main {
 	// border-top: 1px solid rgba(0, 0, 0, .1);
 	clear:both;
 	// margin: 4em 0;
-	padding: 4em 0;
+	padding: 3em;
+}
+
+.copyright {
+  font-size: .8em;
 }
 
 
 
 
+
+
+
+/*------------------------------------*\
+    #WORK INDEX PAGE
+\*------------------------------------*/
+
+#work-index {
+  padding-top: 2.5em;
+}
+
+
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    .workitem:nth-child(3n-2) {
+      margin-left: 0;
+    }
+  }
+
+
+.work-header h2 {
+  color: #000;
+  font-size: 8em;
+  font-family: $display-font;
+  padding: .2em 0 0 .2em;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.work-thumbnail {
+	display: block;
+	overflow: hidden;
+  width: 100%;
+  margin: .5em 0;
+}
+
+.work-thumbnail figcaption {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: rgba(38, 35, 36, .95);
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	padding: 1em;
+}
+
+.work-thumbnail figcaption:hover {
+	opacity: 1;
+}
+
+.work-thumbnail figcaption h2 {
+	font-size: 1.6em;
+	color: #FFF;
+	margin-bottom: .8em;
+	text-transform: uppercase;
+}
+
+.work-thumbnail figcaption p {
+	font-size: 1em;
+	color: #FFF;
+}
+
+.work-thumbnail figcaption .work-details {
+
+	// Center horizontally and vertically
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 1em;
+	border: 1px solid #fff;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #WORK DETAIL PAGE
+\*------------------------------------*/
+
+.work-content {
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    margin-top: 8em;
+  }
+}
+
+.work-info {
+	line-height: 2em;
+}
+
+.work-title {
+	font-size: 1.8em;
+	font-weight: 400;
+	line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: .5em;
+}
+
+
+.work-description {
+  margin-top: 4em;
+	font-size: $body-copy-size;
+  font-weight: 400;
+	@media only screen and (max-width: 767px) {
+		padding-right: 0;
+	}
+}
+
+.images {
+  padding-right: 3em;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.work-image img {
+	margin: 1em 0;
+}
+
+.project-meta {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  flex-basis: 50%;
+}
+
+.art-director, .client-name {
+	font-family: $display-font;
+	font-style: normal;
+	font-weight: 400;
+	color: $text-color;
+	font-size: 1em;
+	opacity: .4;
+}
+
+.client-name {
+  margin-right: 4em;
+}
+
+
+
+
+/*------------------------------------*\
+    #PROJECT NAVIGATION MODULE
+\*------------------------------------*/
+
+.project-nav {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 10000;
+
+	@media only screen and (max-width: 767px) {
+	  position: relative;
+		bottom: 0;
+		right: 0;
+		margin: 1em 0;
+		display: none;
+	}
+
+}
+
+.project-nav ul, .mobile-project-nav ul {
+	margin: 0;
+}
+
+.project-nav li {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.project-nav a {
+	opacity: .5;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.project-nav a:hover {
+	opacity: 1;
+}
+
+.mobile-project-nav {
+	display: none;
+	text-align: center;
+	margin-bottom: 2em;
+
+	@media only screen and (max-width: 767px) {
+		display: block;
+	}
+}
+
+.mobile-project-nav a {
+	color: #fff;
+	background: #000;
+	font-size: 1.5em;
+	padding: .5em 0;
+	display: inline-block;
+	margin: .5em 0;
+	width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #ABOUT PAGE
+\*------------------------------------*/
+
+#about, #contact {
+  margin-top: 3em;
+
+  @media only screen and (min-width: $sidebar-breakpoint) {
+    margin-top: 8em;
+  }
+}
+
+#about h1, #about h2 {
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
+#about h1 {
+	font-size: 3em;
+	margin-bottom: .5em;
+}
+
+#about h2 {
+	font-size: 1.5em;
+	margin: 1em 0 .5em 0;
+}
+
+#about p, #contact p {
+	font-size: $body-copy-size;
+  line-height: $body-copy-line-height;
+
+	@media only screen and (min-width: 767px) {
+	margin-right: 20%;
+
+	}
+}
+
+#about ul {
+	font-size: 1em;
+	margin: 0;
+}
+
+#about li {
+	line-height: 1.6em;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #CONTACT PAGE
+\*------------------------------------*/
+
+#contact a {
+  padding-bottom: .05em;
+  border-bottom: 1px solid #fff;
+}
 
 // Mailchimp signup form
 #mc_embed_signup {
@@ -103,7 +402,8 @@ main {
   clear:left;
 
   h2 {
-    font-family: $text-font;
+    font-family: $display-font;
+    text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 400;
     margin-bottom: 1em;
@@ -150,462 +450,3 @@ input{
     color: #000;
     cursor: pointer;
     }
-
-
-
-
-
-// Colophon
-
-.colophon {
-  margin: 4em 0 4em 0;
-  line-height: 2em;
-}
-
-.social-links {
-  margin: 0 auto;
-
-  ul {
-    display: inline-block;
-    margin: 0;
-  }
-
-  li {
-    float: left;
-    padding: 0 1em 0 0;
-  }
-}
-
-.copyright {
-  font-size: .8em;
-}
-
-
-
-
-
-
-
-/*------------------------------------*\
-    #SITE-NAVIGATION
-\*------------------------------------*/
-
-.site-nav {
-	display: block;
-	color: $text-color;
-	font-size: 1em;
-
-	@media only screen and (max-width: 767px) {
-		display: none;
-	}
-}
-
-.site-nav ul {
-	margin-left: 0;
-	float:right;
-}
-
-.site-nav li {
-	float: left;
-	display: inline-block;
-	text-align: right;
-}
-
-.site-nav a {
-	padding: 0 1em 0 0;
-	display: block;
-}
-
-
-
-
-
-/*------------------------------------*\
-    #MOBILE SITE-NAVIGATION
-\*------------------------------------*/
-#navigation-small {
-	display: block;
-	cursor: pointer;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0px;
-  @media screen and (min-width: 768px) {
-		display: none;
-	}
-}
-
-.navsmall-open {
-  z-index: 9999;
-}
-
-.navsmall-closed {
-  z-index: 0;
-}
-
-#menu-wrapper {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-  display: block;
-	background-color: rgba(0, 0, 0, 0.9);
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	@include default-transition;
-}
-
-.menu-closed {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	opacity: 0;
-	visibility: hidden;
-}
-
-.menu-open {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-
-#menu-button {
-	position: fixed;
-	top: 2em;
-	right: 1.5em;
-  z-index: 10000;
-  @media screen and (min-width: 768px) {
-		display: none;
-	}
-}
-
-.burger {
-	position: relative;
-	display: block;
-	width: 24px;
-	height: 4px;
-	margin: 4px 0;
-	background: rgba(255, 255, 255, 1);
-	@include default-transition;
-}
-
-.burger-middle.burger-open {
-	@include default-transition;
-	background-color: rgba(255, 255, 255, 0);
-}
-
-.burger-middle.burger-closed {
-	@include default-transition;
-	background-color: rgba(255, 255, 255, 100);
-}
-
-.burger-top.burger-closed {
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
-	top: 0px;
-}
-
-.burger-top.burger-open {
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
-	top: 8px;
-	background-color: rgba(255, 255, 255, 1);
-}
-
-.burger-bottom.burger-closed {
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
-	top: 0px;
-}
-
-.burger-bottom.burger-open {
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	top: -8px;
-	background-color: rgba(255, 255, 255, 1);
-}
-
-#navlist-mobile {
-	font-family: $text-font;
-	text-transform: uppercase;
-	text-align: center;
-	position:relative;
-	top: 50%;
-	height: 60%;
-	font-size: 3em;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	margin: 0;
-	a {
-		color: #FFF;
-	}
-	li {
-		padding: 1em;
-	}
-}
-
-/*------------------------------------*\
-    #WORK INDEX PAGE
-\*------------------------------------*/
-.whitespace {
-  background: #2eeada;
-  background: -moz-linear-gradient(left,  #2eeada 0%, #f9255e 100%);
-  background: -webkit-linear-gradient(left,  #2eeada 0%,#f9255e 100%);
-  background: linear-gradient(to right,  #2eeada 0%,#f9255e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2eeada', endColorstr='#f9255e',GradientType=1 );
-
-  height: 8em;
-  margin-bottom: 2em;
-
-  @media only screen and (max-width: 767px) {
-		height: 4em;
-	}
-}
-
-.work-header h2 {
-  color: #000;
-  font-size: 8em;
-  font-family: $display-font;
-  padding: .2em 0 0 .2em;
-  text-transform: uppercase;
-  font-weight: 200;
-}
-
-.work-thumbnail {
-	display: block;
-	overflow: hidden;
-	@media only screen and (max-width: 767px) {
-		margin-bottom: 1em;
-	}
-}
-
-.work-thumbnail figcaption {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	background: rgba(38, 35, 36, .95);
-	opacity: 0;
-	transition: opacity 0.2s ease-in-out;
-	padding: 1em;
-}
-
-.work-thumbnail figcaption:hover {
-	opacity: 1;
-}
-
-.work-thumbnail figcaption h2 {
-	font-size: 1.6em;
-	color: #FFF;
-	margin-bottom: .8em;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}
-
-.work-thumbnail figcaption p {
-	font-size: 1em;
-	color: #FFF;
-}
-
-.work-thumbnail figcaption .work-details {
-
-	// Center horizontally and vertically
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	padding: 1em;
-	border: 1px solid #fff;
-}
-
-
-
-
-
-/*------------------------------------*\
-    #WORK DETAIL PAGE
-\*------------------------------------*/
-
-.work-info {
-	line-height: 2em;
-	@media only screen and (max-width: 767px) {
-    position: static!important;
-    width: 90%;
-    height:auto;
-	}
-  position: fixed;
-  top: 18em;
-  right: 3em;
-  width: calc(33.333% - 1.5em);
-}
-
-.work-title {
-	font-size: 3em;
-	font-weight: 200;
-	line-height: 1em;
-  text-transform: uppercase;
-  // letter-spacing: .1em;
-  margin-bottom: .5em;
-}
-
-
-.work-description {
-	font-size: 1.2em;
-	@media only screen and (max-width: 767px) {
-		padding-right: 0;
-	}
-}
-
-
-
-.images {
-  width: calc(66.666% - 1.5em);
-  padding-right: 3em;
-  @media only screen and (max-width: 767px) {
-    width: 100%;
-  }
-}
-
-.work-image img {
-	margin: 1em 0;
-}
-
-.art-director {
-	font-family: $text-font;
-	font-style: normal;
-	font-weight: 400;
-	color: $text-color;
-	font-size: 1em;
-	letter-spacing: .1em;
-	opacity: .4;
-}
-
-.client-name {
-  font-family: $text-font;
-  font-style: normal;
-  font-weight: 400;
-  color: $text-color;
-  font-size: 1.4em;
-  letter-spacing: .1em;
-  opacity: .4;
-  margin-bottom: .5em;
-
-}
-
-
-
-
-
-/*------------------------------------*\
-    #PROJECT NAVIGATION MODULE
-\*------------------------------------*/
-
-.project-nav {
-	position: fixed;
-	bottom: 1em;
-	right: 1em;
-	z-index: 10000;
-
-	@media only screen and (max-width: 767px) {
-	  position: relative;
-		bottom: 0;
-		right: 0;
-		margin: 1em 0;
-		display: none;
-	}
-
-}
-
-.project-nav ul, .mobile-project-nav ul {
-	margin: 0;
-}
-
-.project-nav li {
-	width: 40px;
-	height: 40px;
-	float: left;
-}
-
-.project-nav a {
-	opacity: .5;
-	transition: opacity 0.2s ease-in-out;
-}
-
-.project-nav a:hover {
-	opacity: 1;
-}
-
-
-
-
-.mobile-project-nav {
-	display: none;
-	text-align: center;
-	margin-bottom: 2em;
-
-	@media only screen and (max-width: 767px) {
-		display: block;
-	}
-}
-
-.mobile-project-nav a {
-	color: #fff;
-	background: #000;
-	font-size: 1.5em;
-	padding: .5em 0;
-	display: inline-block;
-	margin: .5em 0;
-	width: 100%;
-}
-/*------------------------------------*\
-    #ABOUT PAGE
-\*------------------------------------*/
-
-#about h1, #about h2 {
-	text-transform: uppercase;
-	font-weight: 900;
-}
-
-#about h1 {
-	font-size: 3em;
-	margin-bottom: .5em;
-}
-
-#about h2 {
-	font-size: 1.5em;
-	margin: 1em 0 .5em 0;
-}
-
-#about p, #contact p {
-	font-size: 1.2em;
-  line-height: 1.6em;
-
-	@media only screen and (min-width: 767px) {
-	margin-right: 20%;
-
-	}
-}
-
-#about ul {
-	font-size: 1em;
-	margin: 0;
-}
-
-#about li {
-	line-height: 1.6em;
-}
-
-
-
-
-
-/*------------------------------------*\
-    #CONTACT PAGE
-\*------------------------------------*/
-
-#contact a {
-  padding-bottom: .05em;
-  border-bottom: 1px solid #fff;
-}

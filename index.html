@@ -2,17 +2,13 @@
 layout: default
 ---
 <!-- index.html -->
-    <div class="container work-wrapper">
+    <div class="work-wrapper">
       <section id="work-index">
-        <div class="col8 whitespace work-header">
-
-        </div>
         {% assign sorted = (site.work | sort: 'date') | reverse %}
         {% for work in sorted %}
-        <div class="col2">
-          <div class="work-thumbnail art">
+        <div class="col4 workitem">
+          <figure class="work-thumbnail art">
             <a href="{{ work.url }}" title="{{ work.title }}">
-              <figure>
                 <img srcset="{{ site.url }}{{ site.baseurl }}/img/{{ work.thumbnail }}-1x.png 1x, {{ site.url }}{{ site.baseurl }}/img/{{ work.thumbnail }}-2x.png 2x">
                 <figcaption>
                   <span class="work-details">
@@ -20,9 +16,8 @@ layout: default
                     <p class="client">{{ work.client }}</p>
                   </span>
                 </figcaption>
-              </figure>
             </a>
-          </div>
+          </figure>
         </div>
         {% endfor %}
       </section>

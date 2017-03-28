@@ -33,37 +33,3 @@
   $menuItem.on('click', function() {
     toggleMenu();
   });
-
-  // Scrolltop
-  var pageFooterOffsetTop;
-  var rightColumnHeight;
-  var leftColumnHeight;
-  var leftOffsetTop;
-  var scrollheight;
-  var leftRightOffset;
-
-  $(window).on('load resize', function(e) {
-    pageFooterOffsetTop = $('.site-footer').offset().top;
-    rightColumnHeight = $('.work-info').outerHeight();
-    leftColumnHeight = $('.images').outerHeight();
-    leftOffsetTop = $('.images').offset().top;
-    scrollheight = $('.site-footer').offset().top - $('.work-info').outerHeight() - $('.work-info').offset().top;
-    leftRightOffset = leftOffsetTop + leftColumnHeight - rightColumnHeight;
-    rightOffsetTop = $('.work-info').offset().top;
-  });
-
-  $(window).scroll(function() {
-    if ($(document).scrollTop() >= scrollheight) {
-      $('.work-info').css({
-        'position': 'absolute',
-        'top': leftRightOffset
-      });
-    } else {
-      $('.work-info').css({
-        'position': 'fixed',
-        'top': '18em'
-      });
-    }
-  });
-
-  // 1000

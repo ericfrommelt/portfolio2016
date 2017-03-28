@@ -1,39 +1,16 @@
 <!-- header.html -->
-<!-- <div class="header-image"></div> -->
-
 <div class="container">
   <header class="site-header">
-    <div class="col4">
-      <a href="{{ site.url }}{{ site.baseurl }}"><h1>Eric Frommelt</h1></a>
-    </div>
-    <!-- Site Navigation - Wide -->
-    <div class="col4">
-      <nav class="site-nav">
-        <ul>
-          <li><a href="{{ site.url }}{{ site.baseurl }}">Work</a></li>
-          <li><a href="{{ site.url }}{{ site.baseurl }}/about">About</a></li>
-          <li><a href="{{ site.url }}{{ site.baseurl }}/contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a href="{{ site.url }}{{ site.baseurl }}"><h1>Eric Frommelt</h1></a>
+    <nav class="site-nav" role="navigation">
+      <a href="{{ site.url }}{{ site.baseurl }}">Work</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/about">About</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/contact">Contact</a>
+    </nav>
+    <ul class="social-links">
+      <li><a href="https://www.instagram.com/ericfrommelt/"><img src="/img/icon_instagram.svg" alt="instagram"></a></li>
+      <li><a href="https://twitter.com/ericfrommelt"><img src="/img/icon_twitter.svg" alt="twitter"></a></li>
+    </ul>
   </header>
-</div>
-
-
-<!-- Site Navigation - Small -->
-
-<div id="menu-button">
-  <div class="burger burger-top burger-closed"></div>
-  <div class="burger burger-middle burger-closed"></div>
-  <div class="burger burger-bottom burger-closed"></div>
-</div>
-<div id="navigation-small">
-	<div id="menu-wrapper" class="menu-closed">
-		<ul id="navlist-mobile">
-      <li><a href="{{ site.url }}{{ site.baseurl }}/">Work</a></li>
-      <li><a href="{{ site.url }}{{ site.baseurl }}/about">About</a></li>
-      <li><a href="{{ site.url }}{{ site.baseurl }}/contact">Contact</a></li>
-		</ul>
-	</div>
 </div>
 <!-- //header.html -->
